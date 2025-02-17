@@ -210,5 +210,7 @@ bool CFOUR_Grid::Draw()
 			return false;
 		}
 
+	cout << "\nGAME IS A DRAW" << endl;
+
 	return true;
 }
