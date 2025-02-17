@@ -5,7 +5,7 @@
 #include "grid.hpp"
 
 /**
- * Definition of the connect four frame
+ * Definition of the connect four computer player
  */
 class CFOUR_Complayer
 {
