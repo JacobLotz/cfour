@@ -34,6 +34,10 @@ sudo apt install g++ cmake make
 
 This code is only tested on `linux-mint 21.2`.
 
+## Source code
+The source code of this project can be found in the folder `src`. The connect four grid, the computer player and the human player are defined in separate classes in separate files.
+
+
 ## To do
  - Streamline CFOUR_Grid::Win()
  - More elegant grid
