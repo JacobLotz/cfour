@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.12)
-project(cfour)
+project(cfour LANGUAGES CXX)
 
 # Prohibit in-source builds
 if ("${CMAKE_SOURCE_DIR}" STREQUAL "${CMAKE_BINARY_DIR}")
@@ -23,6 +23,12 @@ message(STATUS "CMAKE_INSTALL_PREFIX = ${CMAKE_INSTALL_PREFIX}")
 #
 add_subdirectory(src)
 
+
+# Setup the executable
+add_executable(cfour-exe src/cfour.cpp)
+set_target_properties(cfour-exe PROPERTIES OUTPUT_NAME cfour)
+target_link_libraries(cfour-exe cfour ${CMAKE_DL_LIBS})
+
 # Install the executable
-install(TARGETS cfour-exe RUNTIME DESTINATION bin)
+#install(TARGETS cfour-exe RUNTIME DESTINATION bin)
 
