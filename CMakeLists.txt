@@ -11,12 +11,6 @@ if (NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Release")
 endif()
 
-#
-# Status
-#
-message(STATUS "cfour build type: CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
-message(STATUS "cfour defines: ${_delfi_compile_defs}")
-message(STATUS "CMAKE_INSTALL_PREFIX = ${CMAKE_INSTALL_PREFIX}")
 
 #
 # Setup the library target
