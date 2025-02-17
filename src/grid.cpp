@@ -13,12 +13,12 @@ using namespace std;
 CFOUR_Grid::CFOUR_Grid()
 {
 
-    cout <<"    _____      _  _    "<< endl;
-    cout <<"   / ____|    | || |   "<< endl;
-    cout <<"  | |   ______| || |_  "<< endl;
-    cout <<"  | |  |______|__   _| "<< endl;
-    cout <<"  | |____        | |   "<< endl;
-    cout <<"   \\_____|       |_|   \n"<< endl;
+    cout <<"    _____        _  _    "<< endl;
+    cout <<"   / ____|      | || |   "<< endl;
+    cout <<"  | |   ______  | || |_  "<< endl;
+    cout <<"  | |  |______| |__   _| "<< endl;
+    cout <<"  | |____          | |   "<< endl;
+    cout <<"   \\_____|         |_|   \n"<< endl;
 
 	cout << "Hello, this is C-4 are you ready \n";
 	cout << "for a blasting game????\n\n";
@@ -207,7 +207,9 @@ bool CFOUR_Grid::Draw()
 {
 	for (int i = 0; i < wgrid; i++)
 		if (!CheckColFull(i))
-			{return false;}
+		{
+			return false;
+		}
 
 	return true;
 }
