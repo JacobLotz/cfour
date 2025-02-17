@@ -6,7 +6,6 @@
 
 using namespace std;
 
-
 CFOUR_Complayer::CFOUR_Complayer(CFOUR_Grid& grid_):
 	grid(grid_)
 {

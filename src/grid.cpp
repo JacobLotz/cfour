@@ -189,11 +189,11 @@ endwin:
 
 		if (sign)
 		{
-			cout << "COMPUTER HAS WON" << endl;
+			cout << "I HAVE WON!" << endl;
 		}
 		else
 		{
-			cout << "YOU HAVE WON" << endl;
+			cout << "YOU HAVE WON!" << endl;
 		}
 
 		return true;
