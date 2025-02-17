@@ -109,7 +109,7 @@ bool CFOUR_Grid::Win()
 	bool win = false;
 	bool sign;
 
-	// Horizontal
+	// Check horizontal win
 	for (int j = 0; j < hgrid; j++)
 		for (int i = 0; i < wgrid-3; i++)
 		{
@@ -127,7 +127,7 @@ bool CFOUR_Grid::Win()
 			}
 		}
 
-	// Vertical
+	// Check vertical win
 	for (int i = 0; i < wgrid; i++)
 		for (int j = 0; j < hgrid-3; j++)
 		{
@@ -145,7 +145,7 @@ bool CFOUR_Grid::Win()
 			}
 		}
 
-	// Diagonal positive grad
+	// Check win with diagonal positive grad
 	for (int i = 0; i < wgrid-3; i++)
 		for (int j = 0; j < hgrid-3; j++)
 		{
@@ -163,7 +163,7 @@ bool CFOUR_Grid::Win()
 			}
 		}
 
-	// Diagonal negative grad
+	// Check win with diagonal negative grad
 	for (int i = 3; i < wgrid; i++)
 		for (int j = 0; j < hgrid-3; j++)
 		{
@@ -181,8 +181,9 @@ bool CFOUR_Grid::Win()
 			}
 		}
 
-	// Report
 endwin:
+
+	// Report result
 	if(win)
 	{
 		cout << "\nGAME OVERRRRRR" << endl;
@@ -204,6 +205,7 @@ endwin:
 
 bool CFOUR_Grid::Draw()
 {
+	// Check if there is a possible move in each column
 	for (int i = 0; i < wgrid; i++)
 		if (!CheckColFull(i))
 		{

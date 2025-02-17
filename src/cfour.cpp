@@ -1,7 +1,6 @@
 // External
 #include <iostream>
 
-
 // Internal
 #include "grid.hpp"
 #include "complayer.hpp"
@@ -9,7 +8,6 @@
 
 // Namespaces
 using namespace std;
-
 
 int main()
 {
@@ -28,6 +26,7 @@ int main()
 
 	while(1)
 	{
+		// Human player plays
 		humplayer.Play();
 		grid.Print();
 		gamewon = grid.Win();
@@ -36,6 +35,7 @@ int main()
 		if(gamewon == true || gamedraw == true)
 			break;
 
+		// Computer plays
 		complayer.Play();
 		grid.Print();
 		gamewon = grid.Win();

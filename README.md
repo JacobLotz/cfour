@@ -33,3 +33,7 @@ sudo apt install g++ cmake make
 ```
 
 This code is only tested on `linux-mint 21.2`.
+
+## To do
+ - Streamline CFOUR_Grid::Win()
+ - More elegant grid

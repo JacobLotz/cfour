@@ -13,6 +13,9 @@ void CFOUR_Humplayer::Play()
 	int i;
 	bool noentry = true;
 
+	// Allow question to be answered and verify that the answer fits
+	// the constraints.
+
 	while(noentry)
 	{
 		cin >> i;
@@ -31,5 +34,6 @@ void CFOUR_Humplayer::Play()
 		}
 	}
 
+	// Insert fiche
 	grid.HumanInsert(i);
 }
