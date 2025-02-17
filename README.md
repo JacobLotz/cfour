@@ -1,14 +1,4 @@
 # cfour
-
-  _____        _  _   
- / ____|      | || |  
-| |   ______  | || |_ 
-| |  |______| |__   _|
-| |____          | |  
- \_____|         |_|  
-
-
-
 Connect Four is a two-player strategy game where the goal is to be the first to connect four of your colored discs in a row, either horizontally, vertically, or diagonally.
 
 ## Game Setup:
