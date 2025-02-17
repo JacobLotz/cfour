@@ -24,19 +24,25 @@ int main()
 
 	// Run the game
 	bool gamewon = false;
+	bool gamedraw = false;
 
-	while(gamewon == false)
+	while(1)
 	{
 		humplayer.Play();
 		grid.Print();
 		gamewon = grid.Win();
+		gamedraw = grid.Draw();
 
-		if(gamewon == true)
+		if(gamewon == true || gamedraw == true)
 			break;
 
 		complayer.Play();
 		grid.Print();
 		gamewon = grid.Win();
+		gamedraw = grid.Draw();
+
+		if(gamewon == true || gamedraw == true)
+			break;
 	}
 
 

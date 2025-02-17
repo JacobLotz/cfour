@@ -4,10 +4,6 @@
 // Internal
 #include "grid.hpp"
 
-// External
-#include <iostream>
-#include <array>
-
 /**
  * Definition of the connect four frame
  */
@@ -19,7 +15,7 @@ public:
 	CFOUR_Complayer(CFOUR_Grid& grid_);
 
 
-	/// Destructor
+	/// Empty destructor
 	~CFOUR_Complayer(){};
 
 	void Play();

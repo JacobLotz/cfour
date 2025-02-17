@@ -4,10 +4,6 @@
 // Internal
 #include "grid.hpp"
 
-// External
-#include <iostream>
-#include <array>
-
 /**
  * Definition of the connect four frame
  */
@@ -19,15 +15,13 @@ public:
 	CFOUR_Humplayer(CFOUR_Grid& grid_):
 		grid(grid_){};
 
-	/// Destructor
+	/// Empty destructor
 	~CFOUR_Humplayer(){};
 
 	void Play();
 
 protected:
 	CFOUR_Grid& grid;
-
-
 };
 
 

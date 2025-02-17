@@ -87,7 +87,6 @@ void CFOUR_Grid::HumanInsert(int i)
 	fill[i] += 1;
 }
 
-
 void CFOUR_Grid::ComputerInsert(int i)
 {
 	SetVal(i, fill[i], -1);
