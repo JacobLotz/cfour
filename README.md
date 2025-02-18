@@ -1,4 +1,13 @@
 # C-4
+```
+    _____        _  _    
+   / ____|      | || |   
+  | |   ______  | || |_  
+  | |  |______| |__   _| 
+  | |____          | |   
+   \_____|         |_|   
+
+```
 Connect Four is a two-player strategy game where the goal is to be the first to connect four of your colored discs in a row, either horizontally, vertically, or diagonally.
 
 ## Game Setup:
@@ -23,8 +32,8 @@ This will create a `build` folder in which the game is compiled. In this folder,
 
 ## Playing the game
 
-```
 The grid looks like this: 
+```
 ---------------------
  0  0  0  0  0  0  0 
  0  0  0  0  0  0  0 
@@ -40,7 +49,7 @@ Here
  -  0 means it empty;
  -  1 means that one of your fiches fills this spot.
 
-If it is your turn you can play your piece by picking a column between 0-6. The computer plays automatically
+If it is your turn you can play your piece by picking a column between 0-6 and returning your answer to the command line. The computer plays automatically.
 
 
 
