@@ -11,13 +11,14 @@
 class CFOUR_Grid
 {
 public:
-	/** Default and only constructor. bool @a print
-	 * allows for printing the start message (true) 
-	 * or not (false) */
-	CFOUR_Grid(bool print_);
+	/// Default and only constructor (empty)
+	CFOUR_Grid(){};
 
 	/// Destructor (empty)
 	~CFOUR_Grid(){};
+
+	/// Prints an explanation of the game
+	void PrintGameplay();
 
 	/** Returns the value in the grid at the indices @a i (hor.)
 	 * and @a j (vert.) in the grid */

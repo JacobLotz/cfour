@@ -10,40 +10,37 @@ using namespace std;
 bool TestCFour();
 bool TestGrid();
 
+// Returns true if all tests are passed
 bool TestCFour()
 {
+	cout << "\nTESTING THE FUNCTIONALITY OF THE GAME" << endl;
+
 	bool allpass;
 
 	allpass = TestGrid();
 
 	if (!allpass)
 	{	
-		cout << "\n___________________________" << endl;
-		cout << "FAIL: TESTS HAVE FAILED" << endl;
-		cout << "___________________________" << endl;
+		cout << "\nFAIL: TESTS HAVE FAILED" << endl;
 	}
 	else
 	{
-		cout << "\n___________________________" << endl;
-		cout << "SUCCES: ALL TESTS HAVE PASSED" << endl;
-		cout << "___________________________" << endl;
+		cout << "\nSUCCES: ALL TESTS HAVE PASSED" << endl;
 	}
 
+	cout << "allpass = " << allpass << endl;
 	return allpass;
 }
 
-
-
-// Grid testing functions
+// Grid testing functions. Returns true if all tests are passed.
 bool TestGrid()
 {
-	cout << "Running tests on the game" << endl;
 	bool allpass = true;
 	bool pass;
 
 	cout << "\n\n1) Testing CFOUR_Grid::Draw()" << endl;
 	{
-		CFOUR_Grid grid(false);
+		CFOUR_Grid grid;
 		pass = grid.TestDraw();
 
 		if(pass)
@@ -57,7 +54,7 @@ bool TestGrid()
 
 	cout << "\n\n2) Testing Grid::Win()" << endl;
 	{
-		CFOUR_Grid grid(false);
+		CFOUR_Grid grid;
 		pass = grid.TestWin();
 
 		if(pass)
@@ -71,7 +68,7 @@ bool TestGrid()
 
 	cout << "\n\n3) Testing Grid::HumanInsert" << endl;
 	{
-		CFOUR_Grid grid(false);
+		CFOUR_Grid grid;
 		pass = grid.TestHumanInsert();
 
 		if(pass)
@@ -85,7 +82,7 @@ bool TestGrid()
 
 	cout << "\n\n4) Testing Grid::ComputerInsert" << endl;
 	{
-		CFOUR_Grid grid(false);
+		CFOUR_Grid grid;
 		pass = grid.TestComputerInsert();
 
 		if(pass)

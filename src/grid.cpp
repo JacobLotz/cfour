@@ -9,39 +9,26 @@
 
 using namespace std;
 
-CFOUR_Grid::CFOUR_Grid(bool print)
+void CFOUR_Grid::PrintGameplay()
 {
-	if(print)
-	{
-    	cout <<"    _____        _  _    "<< endl;
-    	cout <<"   / ____|      | || |   "<< endl;
-    	cout <<"  | |   ______  | || |_  "<< endl;
-    	cout <<"  | |  |______| |__   _| "<< endl;
-    	cout <<"  | |____          | |   "<< endl;
-    	cout <<"   \\_____|         |_|   \n"<< endl;
+	cout << "You are playing connect four against\n";
+	cout << "me. If it is your turn you can play\n";
+	cout << "your piece by picking a column\n";
+	cout << "between 0-6\n\n";
 
-		cout << "Hello, this is C-4 are you ready \n";
-		cout << "for a blasting game????\n\n";
-
-		cout << "You are playing connect four against\n";
-		cout << "me. If it is your turn you can play\n";
-		cout << "your piece by picking a column\n";
-		cout << "between 0-6\n\n";
-
-		cout << "The grid looks like this: \n";
+	cout << "The grid looks like this: \n";
 	
-		Print();
+	Print();
 
-		cout << "Here \n";
-		cout << " -1 indicates that this location is \n";
-		cout << "    filled by a fiche of me; \n";
-		cout << "  0 means it empty;\n";
-		cout << "  1 means that one of your fiches\n";
-		cout << "    fills this spot.\n\n";
+	cout << "Here \n";
+	cout << " -1 indicates that this location is \n";
+	cout << "    filled by a fiche of me; \n";
+	cout << "  0 means it empty;\n";
+	cout << "  1 means that one of your fiches\n";
+	cout << "    fills this spot.\n\n";
 
-		cout << "You can start!\n";
-	}
-};
+	cout << "You can start!\n";
+}
 
 int CFOUR_Grid::GetVal(int i, int j)
 {

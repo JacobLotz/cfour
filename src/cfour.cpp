@@ -10,21 +10,33 @@
 // Namespaces
 using namespace std;
 
-// Grid testing function
-bool TestGrid();
+// Definition at bottom of script
+void WelcomeMessage(bool test_);
 
-int main()
+int main(int argc, char *argv[])
 {
-	bool test  = true;
+    // Command line options
+    bool test = false; // Default to false
 
+    if (argc > 1) // Check if an argument was provided
+    {
+        std::string argument = "--test";
+        if (argument == argv[1]) // Compare the first argument
+            test = true;
+    }
+
+    // Welcome our player
+    WelcomeMessage(test);
+
+    // Body of the code
 	if (test) // Test environment
 	{
-		return TestCFour();
+		return !TestCFour();
 	}
 	else // Actual game
 	{
 		// Initialize the grid on which the game is played
-		CFOUR_Grid grid(true);
+		CFOUR_Grid grid;
 
 		// Initialize the communicator with the human player
 		CFOUR_Humplayer humplayer(grid);
@@ -60,4 +72,29 @@ int main()
 	}
 
 	return 0;
+}
+
+
+void WelcomeMessage(bool test_)
+{
+	cout <<"    _____        _  _    "<< endl;
+   	cout <<"   / ____|      | || |   "<< endl;
+   	cout <<"  | |   ______  | || |_  "<< endl;
+   	cout <<"  | |  |______| |__   _| "<< endl;
+   	cout <<"  | |____          | |   "<< endl;
+   	cout <<"   \\_____|         |_|   \n"<< endl;
+
+   	if(test_)
+   	{
+   		cout << "Hello, this is C-4 are I am going \n";
+		cout << "to perform some tests for you.\n\n";
+   	}
+   	else
+   	{
+   		cout << "Hello, this is C-4 are you ready \n";
+		cout << "for a blasting game????\n\n";
+	}
+
+	cout << "Use the --test option to test the" << endl;
+	cout << "functionality of the game.\n" <<endl;
 }

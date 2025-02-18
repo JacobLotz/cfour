@@ -8,6 +8,7 @@ list(APPEND HEADERS
   grid.hpp
   complayer.hpp
   humplayer.hpp
+  test.hpp
 )
 
 # Allegedly adding the headers is helpful for IDEs.
@@ -16,3 +17,7 @@ target_compile_definitions(cfour PUBLIC "${_cfour_compile_defs}")
 target_compile_options(cfour PUBLIC "${_cfour_compile_opts}")
 target_include_directories(cfour SYSTEM PUBLIC "${_cfour_include_dirs}")
 target_link_libraries(cfour PUBLIC "${_cfour_libraries}")
+
+# Testing
+add_test(NAME test_cfour    COMMAND cfour --test)
+

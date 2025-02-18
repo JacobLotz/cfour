@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Build script for c-4
+# Build script for C-4 (cfour)
 #
 
 # Create build directory
@@ -11,3 +11,5 @@ cd build
 cmake ..
 make -j 2
 
+# Test code
+make test

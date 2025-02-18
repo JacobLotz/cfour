@@ -12,6 +12,7 @@ if (NOT CMAKE_BUILD_TYPE)
 endif()
 
 
+
 #
 # Setup the library target
 #
@@ -24,5 +25,10 @@ set_target_properties(cfour-exe PROPERTIES OUTPUT_NAME cfour)
 target_link_libraries(cfour-exe cfour ${CMAKE_DL_LIBS})
 
 # Install the executable
-#install(TARGETS cfour-exe RUNTIME DESTINATION bin)
+install(TARGETS cfour-exe RUNTIME DESTINATION bin)
 
+# Test
+enable_testing()
+
+# Testing
+add_test(NAME test_cfour    COMMAND cfour-exe --test)
