@@ -21,18 +21,22 @@ If a player connects four first, the player wins immediately. However, if the gr
 
 ## Running this code
 To play the game, you can clone this repository and install the game using
+
 ```
 bash deploy.sh
 ```
 
 This will create a `build` folder in which the game is compiled. In this folder, the game can be played by running the command
+
 ```
 ./cfour
 ```
 
 ## Playing the game
 
-The grid looks like this: 
+
+The grid looks like this:
+
 ```
 ---------------------
  0  0  0  0  0  0  0 
@@ -45,6 +49,7 @@ The grid looks like this:
 ```
 
 Here
+
  - -1 indicates that this location is filled by a fiche of me; 
  -  0 means it empty;
  -  1 means that one of your fiches fills this spot.
@@ -56,11 +61,13 @@ If it is your turn you can play your piece by picking a column between 0-6 and r
 
 ## Testing this code
 After the code is compiled using `deploy.sh`, it is tested directly. To enforce testing manually one can run
+
 ```
 ./cfour --test
 ```
 
 or
+
 ```
 make test
 ```
@@ -68,6 +75,7 @@ It should pass all tests.
 
 ## Requirements
 To compile the code using `deploy.sh` you need
+
 - `g++`
 - `cmake`
 - `make`
@@ -84,5 +92,6 @@ The source code of this project can be found in the folder `src`. The connect fo
 
 
 ## To do
+
  - Streamline CFOUR_Grid::Win()
  - More elegant grid
