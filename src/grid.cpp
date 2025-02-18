@@ -9,20 +9,8 @@
 
 using namespace std;
 
-
-CFOUR_Grid::CFOUR_Grid()
+void CFOUR_Grid::PrintGameplay()
 {
-
-    cout <<"    _____        _  _    "<< endl;
-    cout <<"   / ____|      | || |   "<< endl;
-    cout <<"  | |   ______  | || |_  "<< endl;
-    cout <<"  | |  |______| |__   _| "<< endl;
-    cout <<"  | |____          | |   "<< endl;
-    cout <<"   \\_____|         |_|   \n"<< endl;
-
-	cout << "Hello, this is C-4 are you ready \n";
-	cout << "for a blasting game????\n\n";
-
 	cout << "You are playing connect four against\n";
 	cout << "me. If it is your turn you can play\n";
 	cout << "your piece by picking a column\n";
@@ -40,15 +28,6 @@ CFOUR_Grid::CFOUR_Grid()
 	cout << "    fills this spot.\n\n";
 
 	cout << "You can start!\n";
-};
-
-void CFOUR_Grid::CheckSize(int i, int j)
-{
-	if (i >= wgrid || j >= hgrid)
-	{
-		cout << "ERROR: grid index does not exist\n";
-		exit(1);
-	}
 }
 
 int CFOUR_Grid::GetVal(int i, int j)
@@ -215,4 +194,119 @@ bool CFOUR_Grid::Draw()
 	cout << "\nGAME IS A DRAW" << endl;
 
 	return true;
+}
+
+void CFOUR_Grid::CheckSize(int i, int j)
+{
+	if (i >= wgrid || j >= hgrid)
+	{
+		cout << "ERROR: grid index does not exist\n";
+		exit(1);
+	}
+}
+
+// Testing functions
+bool CFOUR_Grid::TestWin()
+{
+	bool pass;
+
+	// Horizontal test
+	SetVal(0,0, 1);
+	SetVal(1,0, 1);
+	SetVal(2,0, 1);
+	SetVal(3,0, 1);
+
+	pass = Win();
+
+
+	// Vertical test
+	for(auto& row : grid)
+  		for(auto& i : row)
+  		{
+  			i = 0;
+  		}
+
+  	SetVal(0,0, 1);
+	SetVal(0,1, 1);
+	SetVal(0,2, 1);
+	SetVal(0,3, 1);
+
+	pass = Win();
+
+
+	// Diagonal positive grad test
+	for(auto& row : grid)
+  		for(auto& i : row)
+  		{
+  			i = 0;
+  		}
+
+	SetVal(0,0, -1);
+	SetVal(1,1, -1);
+	SetVal(2,2, -1);
+	SetVal(3,3, -1);
+
+	pass = Win();
+
+	// Diagonal negative grad test
+	for(auto& row : grid)
+  		for(auto& i : row)
+  		{
+  			i = 0;
+  		}
+
+
+	SetVal(3,0, -1);
+	SetVal(2,1, -1);
+	SetVal(1,2, -1);
+	SetVal(0,3, -1);
+
+	pass = Win();
+  	
+
+	return pass;  
+}
+
+bool CFOUR_Grid::TestDraw()
+{
+	for(auto& i : fill)
+	{
+  		i = hgrid;
+  	}
+
+	return Draw();  
+}
+
+bool CFOUR_Grid::TestHumanInsert()
+{
+	for(auto& row : grid)
+  		for(auto& i : row)
+  		{
+  			i = 0;
+  		}
+
+  	HumanInsert(1);
+
+  	if (GetVal(1,0) == 1)
+  		return true;
+  	
+  	else
+  		return false;
+}
+
+bool CFOUR_Grid::TestComputerInsert()
+{
+	for(auto& row : grid)
+  		for(auto& i : row)
+  		{
+  			i = 0;
+  		}
+
+  	ComputerInsert(5);
+
+  	if (GetVal(5,0) == -1)
+  		return true;
+  	
+  	else
+  		return false;
 }
