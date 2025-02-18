@@ -23,6 +23,7 @@ This will create a `build` folder in which the game is compiled. In this folder,
 
 ## Playing the game
 
+```
 The grid looks like this: 
 ---------------------
  0  0  0  0  0  0  0 
@@ -32,12 +33,12 @@ The grid looks like this:
  0  0  0  0  0  0  0 
  0  0  0  0  0  0  0 
 ---------------------
-Here 
- -1 indicates that this location is 
-    filled by a fiche of me; 
-  0 means it empty;
-  1 means that one of your fiches
-    fills this spot.
+```
+
+Here
+ - -1 indicates that this location is filled by a fiche of me; 
+ -  0 means it empty;
+ -  1 means that one of your fiches fills this spot.
 
 If it is your turn you can play your piece by picking a column between 0-6. The computer plays automatically
 
