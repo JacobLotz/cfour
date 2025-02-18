@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
 	{
 		// Initialize the grid on which the game is played
 		CFOUR_Grid grid;
+		grid.PrintGameplay();
 
 		// Initialize the communicator with the human player
 		CFOUR_Humplayer humplayer(grid);
