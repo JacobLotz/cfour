@@ -11,16 +11,13 @@
 class CFOUR_Grid
 {
 public:
-
-	/// Default and only constructor (empty)
-	CFOUR_Grid();
+	/** Default and only constructor. bool @a print
+	 * allows for printing the start message (true) 
+	 * or not (false) */
+	CFOUR_Grid(bool print_);
 
 	/// Destructor (empty)
 	~CFOUR_Grid(){};
-
-	/** Verifies wheter the indices @a i (hor.) and 
-	 * @a j (vert.) fit in the grid */
-	void CheckSize(int i, int j);
 
 	/** Returns the value in the grid at the indices @a i (hor.)
 	 * and @a j (vert.) in the grid */
@@ -63,6 +60,16 @@ public:
 	/// Returns the height of the grid as an integer.
 	int GetHeight() const
 		{return hgrid;};
+
+	/** Verifies wheter the indices @a i (hor.) and 
+	 * @a j (vert.) fit in the grid */
+	void CheckSize(int i, int j);
+
+	/// Testing functions
+	bool TestWin();
+	bool TestDraw();
+	bool TestHumanInsert();
+	bool TestComputerInsert();
 
 protected:
 	// Width of the grid, fixed
