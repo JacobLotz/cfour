@@ -218,6 +218,8 @@ bool CFOUR_Grid::TestWin()
 
 	pass = Win();
 
+	if(!pass)
+		return 1;
 
 	// Vertical test
 	for(auto& row : grid)
@@ -233,6 +235,8 @@ bool CFOUR_Grid::TestWin()
 
 	pass = Win();
 
+	if(!pass)
+		return 1;
 
 	// Diagonal positive grad test
 	for(auto& row : grid)
@@ -247,6 +251,9 @@ bool CFOUR_Grid::TestWin()
 	SetVal(3,3, -1);
 
 	pass = Win();
+
+	if(!pass)
+		return 1;
 
 	// Diagonal negative grad test
 	for(auto& row : grid)
@@ -263,8 +270,10 @@ bool CFOUR_Grid::TestWin()
 
 	pass = Win();
   	
-
-	return pass;  
+	if(!pass)
+		return 1;
+	else
+		return 0;
 }
 
 bool CFOUR_Grid::TestDraw()
@@ -274,7 +283,7 @@ bool CFOUR_Grid::TestDraw()
   		i = hgrid;
   	}
 
-	return Draw();  
+	return !Draw();  
 }
 
 bool CFOUR_Grid::TestHumanInsert()
@@ -288,10 +297,10 @@ bool CFOUR_Grid::TestHumanInsert()
   	HumanInsert(1);
 
   	if (GetVal(1,0) == 1)
-  		return true;
+  		return false;
   	
   	else
-  		return false;
+  		return true;
 }
 
 bool CFOUR_Grid::TestComputerInsert()
@@ -305,8 +314,8 @@ bool CFOUR_Grid::TestComputerInsert()
   	ComputerInsert(5);
 
   	if (GetVal(5,0) == -1)
-  		return true;
+  		return false;
   	
   	else
-  		return false;
+  		return true;
 }

@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     // Body of the code
 	if (test) // Test environment
 	{
-		return !TestCFour();
+		return TestCFour();
 	}
 	else // Actual game
 	{
