@@ -15,11 +15,11 @@ bool TestCFour()
 {
 	cout << "\nTESTING THE FUNCTIONALITY OF THE GAME" << endl;
 
-	bool allpass;
+	bool allfail;
 
-	allpass = TestGrid();
+	allfail = TestGrid();
 
-	if (!allpass)
+	if (allfail)
 	{	
 		cout << "\nFAIL: TESTS HAVE FAILED" << endl;
 	}
@@ -28,71 +28,71 @@ bool TestCFour()
 		cout << "\nSUCCES: ALL TESTS HAVE PASSED" << endl;
 	}
 
-	cout << "allpass = " << allpass << endl;
-	return allpass;
+	return allfail;
 }
 
 // Grid testing functions. Returns true if all tests are passed.
 bool TestGrid()
 {
-	bool allpass = true;
-	bool pass;
+	bool gridfail = false;
+	bool fail;
 
 	cout << "\n\n1) Testing CFOUR_Grid::Draw()" << endl;
 	{
 		CFOUR_Grid grid;
-		pass = grid.TestDraw();
+		fail = grid.TestDraw();
 
-		if(pass)
-			cout <<"-> Test passed" << endl;
-		else
+		if(fail)
 		{
 			cout <<"-> Test FAILED" << endl;
-			allpass = false;
+			gridfail = true;
 		}
+		else
+			cout <<"-> Test passed" << endl;
+
 	}
 
 	cout << "\n\n2) Testing Grid::Win()" << endl;
 	{
 		CFOUR_Grid grid;
-		pass = grid.TestWin();
+		fail = grid.TestWin();
 
-		if(pass)
-			cout <<"-> Test passed" << endl;
-		else
+		if(fail)
 		{
 			cout <<"-> Test FAILED" << endl;
-			allpass = false;
+			gridfail = true;
 		}
+		else
+			cout <<"-> Test passed" << endl;
 	}
 
 	cout << "\n\n3) Testing Grid::HumanInsert" << endl;
 	{
 		CFOUR_Grid grid;
-		pass = grid.TestHumanInsert();
+		fail = grid.TestHumanInsert();
 
-		if(pass)
-			cout <<"-> Test passed" << endl;
-		else
+		if(fail)
 		{
 			cout <<"-> Test FAILED" << endl;
-			allpass = false;
+			gridfail = true;
 		}
+		else
+			cout <<"-> Test passed" << endl;
 	}
 
 	cout << "\n\n4) Testing Grid::ComputerInsert" << endl;
 	{
 		CFOUR_Grid grid;
-		pass = grid.TestComputerInsert();
+		fail = grid.TestComputerInsert();
 
-		if(pass)
-			cout <<"-> Test passed" << endl;
-		else
+		if(fail)
 		{
 			cout <<"-> Test FAILED" << endl;
-			allpass = false;
+			gridfail = true;
 		}
+		else
+			cout <<"-> Test passed" << endl;
 	}
 
-	return allpass;
+	return gridfail;
 }
