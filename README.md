@@ -32,6 +32,8 @@ This will create a `build` folder in which the game is compiled. In this folder,
 ./cfour
 ```
 
+
+\pagebreak
 ## Playing the game
 
 
@@ -90,8 +92,3 @@ This code is only tested on `linux-mint 21.2`.
 ## Source code
 The source code of this project can be found in the folder `src`. The connect four grid, the computer player and the human player are defined in separate classes in separate files.
 
-
-## To do
-
- - Streamline CFOUR_Grid::Win()
- - More elegant grid
