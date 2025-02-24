@@ -39,7 +39,7 @@ bool TestGrid()
 
 	cout << "\n\n1) Testing CFOUR_Grid::Draw()" << endl;
 	{
-		CFOUR_Grid grid;
+		CFOUR_Grid grid(7,6);
 		fail = grid.TestDraw();
 
 		if(fail)
@@ -54,7 +54,7 @@ bool TestGrid()
 
 	cout << "\n\n2) Testing Grid::Win()" << endl;
 	{
-		CFOUR_Grid grid;
+		CFOUR_Grid grid(7,6);
 		fail = grid.TestWin();
 
 		if(fail)
@@ -68,7 +68,7 @@ bool TestGrid()
 
 	cout << "\n\n3) Testing Grid::HumanInsert" << endl;
 	{
-		CFOUR_Grid grid;
+		CFOUR_Grid grid(7,6);
 		fail = grid.TestHumanInsert();
 
 		if(fail)
@@ -82,7 +82,7 @@ bool TestGrid()
 
 	cout << "\n\n4) Testing Grid::ComputerInsert" << endl;
 	{
-		CFOUR_Grid grid;
+		CFOUR_Grid grid(7,6);
 		fail = grid.TestComputerInsert();
 
 		if(fail)

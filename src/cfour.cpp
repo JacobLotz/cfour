@@ -28,15 +28,16 @@ int main(int argc, char *argv[])
     // Welcome our player
     WelcomeMessage(test);
 
-    // Body of the code
-	if (test) // Test environment
+    // Test environment
+	if (test) 
 	{
 		return TestCFour();
 	}
-	else // Actual game
+	// Actual game
+	else
 	{
 		// Initialize the grid on which the game is played
-		CFOUR_Grid grid;
+		CFOUR_Grid grid(7,6);
 		grid.PrintGameplay();
 
 		// Initialize the communicator with the human player
@@ -48,7 +49,6 @@ int main(int argc, char *argv[])
 		// Run the game
 		bool gamewon = false;
 		bool gamedraw = false;
-
 
 		while(1)
 		{
@@ -87,7 +87,7 @@ void WelcomeMessage(bool test_)
 
    	if(test_)
    	{
-   		cout << "Hello, this is C-4 are I am going \n";
+   		cout << "Hello, this is C-4 I am going \n";
 		cout << "to perform some tests for you.\n\n";
    	}
    	else
