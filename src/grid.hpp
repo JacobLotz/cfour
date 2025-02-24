@@ -73,12 +73,12 @@ public:
 	bool TestComputerInsert();
 
 protected:
-	// Width of the grid, fixed
+	/** Width of the grid, fixed. If variable grid-sizes required
+	 * this class could be written differently using templates. */
 	static const int wgrid = 7;
 
 	// Height of the grid, fixed
 	static const int hgrid = 6;
-
 
 	/** Grid: origin is at bottom left. Use as:
 	 * grid(ix, iy) */
