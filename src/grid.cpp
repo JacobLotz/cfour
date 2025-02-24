@@ -3,7 +3,6 @@
 
 // External
 #include <iostream>
-#include <array>
 #include <cmath>
 
 
@@ -221,12 +220,10 @@ bool CFOUR_Grid::TestWin()
 	if(!pass)
 		return 1;
 
-	// Vertical test
-	for(auto& row : grid)
-  		for(auto& i : row)
-  		{
-  			i = 0;
-  		}
+	// Vertical test, first set to zero where we use "std::" to avoid 
+	// confusion with the variable fill
+	for(auto& row : grid) // set zero
+		std::fill(row.begin(), row.end(), 0);
 
   	SetVal(0,0, 1);
 	SetVal(0,1, 1);
@@ -240,10 +237,7 @@ bool CFOUR_Grid::TestWin()
 
 	// Diagonal positive grad test
 	for(auto& row : grid)
-  		for(auto& i : row)
-  		{
-  			i = 0;
-  		}
+		std::fill(row.begin(), row.end(), 0);
 
 	SetVal(0,0, -1);
 	SetVal(1,1, -1);
@@ -257,11 +251,7 @@ bool CFOUR_Grid::TestWin()
 
 	// Diagonal negative grad test
 	for(auto& row : grid)
-  		for(auto& i : row)
-  		{
-  			i = 0;
-  		}
-
+		std::fill(row.begin(), row.end(), 0);
 
 	SetVal(3,0, -1);
 	SetVal(2,1, -1);

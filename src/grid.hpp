@@ -2,8 +2,10 @@
 #define CFOUR_GRID
 
 // External
-#include <array>
+#include <vector>
 #include <iostream>
+
+using namespace std;
 
 /**
  * Definition of the connect four frame
@@ -11,8 +13,12 @@
 class CFOUR_Grid
 {
 public:
-	/// Default and only constructor (empty)
-	CFOUR_Grid(){};
+	/** Constructor sets the width using @a width_ and height using
+	 * @a height_, creates a two dimensional data object to store the
+	 * data of the grid in in @a grid and creates a one dimensional
+	 * data object to store the amount of fiches in a column in. */
+	CFOUR_Grid(int wgrid_, int hgrid_) : wgrid(wgrid_), hgrid(hgrid_),
+	grid(wgrid_, vector<int>(wgrid, 0)), fill(wgrid,0) {};
 
 	/// Destructor (empty)
 	~CFOUR_Grid(){};
@@ -73,19 +79,18 @@ public:
 	bool TestComputerInsert();
 
 protected:
-	/** Width of the grid, fixed. If variable grid-sizes required
-	 * this class could be written differently using templates. */
-	static const int wgrid = 7;
+	/// Width of the grid.
+	const int wgrid;
 
-	// Height of the grid, fixed
-	static const int hgrid = 6;
+	// Height of the grid.
+	const int hgrid;
 
 	/** Grid: origin is at bottom left. Use as:
-	 * grid(ix, iy) */
-	std::array<std::array<int, hgrid>, wgrid> grid = {0};
+	 * grid(ix, iy) to read data */
+	vector<vector<int>> grid;
 
 	/// Fill of the colums of the grid for each column
-	std::array<int, wgrid> fill = {0};
+	vector<int> fill;
 };
 
 
